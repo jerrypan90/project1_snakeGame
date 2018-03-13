@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
 	<link rel="stylesheet" type:"text/css" href="style.css">
-	<title>Snake</title>
+	<title>Snake Game</title>
 </head>
 <body>
 	<header>
-		<h1>The Snake Game</h1>	
+		<h1>THE SNAKE GAME</h1>	
 	</header>
 
 	<canvas id="myCanvas" width="350" height ="350">
@@ -15,15 +16,13 @@
 	<canvas id="dualCanvas" width="350" height ="350">
 	</canvas>
 
-	<div id="startButton">
-		<button id="btn">Start Game</button>
-	</div>
-
 	<div class="centerer">
-		<a href="#" class="button">1 Player</a>
-		<a href="#" class="button">2 Players</a>
+		<button class="button" id="btn">Start</button>
+		<button class="button" id="backBtn">Back</button>
+		<button class="button" id="onePlayer">1 Player</button>
+		<button class="button" id="twoPlayer">2 Players</button>
 	</div>
 
-	<script src="script_p2.js"></script>
+	<script src="script.js"></script>
 </body>
 </html>

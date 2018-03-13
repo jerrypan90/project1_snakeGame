@@ -1,21 +1,27 @@
 canvas {
 	border: 3px solid black;
-	margin-top: 200px;
+	margin-top: 100px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 }
 h1 {
-	color: white;
+	color: rgba(251, 192, 45, 1);
+	font-family: 'Shrikhand', cursive;
+	font-size: 80px;
+	font-weight: 500;
+	text-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
 }
 body {
 	background: url("img/background.jpg");
-	background-position: 50% 20%;
+	background-position: 50% 5%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	text-align: center;
 }
 header {
-	background-color: green;
-	background-size: cover;
-	margin-top: 0;
+	/*background-color: rgba(76, 3, 0, 0.8);*/
+	width: 80%;
+	margin: 0 auto;
 }
 #myCanvas {
 	display: none;
@@ -24,19 +30,21 @@ header {
 	display: none;
 }
 #btn {
-
 	display:none;
 }
+#backBtn {
+	display: none;
+}
 .button {
-	top: 250px;
+	top: 120px;
 	display: inline-block;
 	-webkit-box-sizing:border-box;
 	   -moz-box-sizing:border-box;
 	        box-sizing:border-box;
-	min-width:100px;
+	width:230px;
 	padding: 22px 33px;
 	font-family: 'Lobster', cursive;
-	font-size: 26px;
+	font-size: 40px;
 	line-height: 26px;
 	text-decoration: none;
 	color: #FFF;
@@ -61,7 +69,7 @@ header {
 
 .button::before {
 	content: '';
-	display: block;
+	display: inline-block;
 	position: absolute;
 	top: -7px;
 	left: -3px;

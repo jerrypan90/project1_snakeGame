@@ -1,3 +1,48 @@
+// overall user interface varibles
+var onePlayerBtn = document.querySelector('#onePlayer');
+var twoPlayerBtn = document.querySelector('#twoPlayer');
+var firstPlayerCanvas = document.querySelector('#myCanvas');
+var secondPlayerCanvas = document.querySelector('#dualCanvas');
+var startBtn = document.querySelector('#btn');
+var backBtn = document.querySelector('#backBtn');
+
+// one player game
+function startOnePlayer() {
+    onePlayerBtn.style.display = "none";
+    twoPlayerBtn.style.display = "none";
+    firstPlayerCanvas.style.display = "inline-block";
+    startBtn.style.display = "inline-block";
+    backBtn.style.display = "inline-block";
+}
+
+// two players game
+function startTwoPlayer() {
+    onePlayerBtn.style.display = "none";
+    twoPlayerBtn.style.display = "none";
+    firstPlayerCanvas.style.display = "inline-block";
+    secondPlayerCanvas.style.display = "inline-block";
+    startBtn.style.display = "inline-block";
+    backBtn.style.display = "inline-block";
+}
+
+function mainMenu() {
+    onePlayerBtn.style.display = "inline-block";
+    twoPlayerBtn.style.display = "inline-block";
+    firstPlayerCanvas.style.display = "none";
+    secondPlayerCanvas.style.display = "none";
+    startBtn.style.display = "none";
+    backBtn.style.display = "none";
+}
+
+// linking 1 Player button to startOnePlayer function
+onePlayerBtn.addEventListener("click", startOnePlayer);
+
+// linking 2 Player button to startTwoPlayer function
+twoPlayerBtn.addEventListener("click", startTwoPlayer);
+
+// linking back button to home page
+backBtn.addEventListener("click", mainMenu);
+
 // linking to P1 myCanvas html
 var mycanvas = document.getElementById('myCanvas');
 var ctx = myCanvas.getContext("2d");
@@ -26,7 +71,7 @@ var foodB;
 var drawModule = (function () { 
     var bodySnake = function(x, y) {
         // this is the single square of the snake
-        ctx.fillStyle = 'green';
+        ctx.fillStyle = 'yellow';
         ctx.fillRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
         // this is the border of the snake
         ctx.strokeStyle = 'darkgreen';
@@ -191,7 +236,7 @@ var init = function () {
 var drawModuleB = (function () { 
     var bodySnakeB = function(x, y) {
         // this is the single square of the snake
-        ctxB.fillStyle = 'blue';
+        ctxB.fillStyle = 'green';
         ctxB.fillRect(x*snakeSizeB, y*snakeSizeB, snakeSizeB, snakeSizeB);
         // this is the border of the snake
         ctxB.strokeStyle = 'darkblue';
@@ -364,12 +409,13 @@ function runGame (drawModule, drawModuleB) {
 
     document.onkeydown = function (event) {
 
-        // keyCode = window.event.keyCode;
-
+        /* keyCode = window.event.keyCode;*/
+        // to identity the playing keys
         playKey = event.keyCode;
 
         switch (playKey) {
 
+        // player 1 - left control
         case 65:
             if (direction != 'right') {
                 direction = 'left';
@@ -377,6 +423,7 @@ function runGame (drawModule, drawModuleB) {
             }
             break;
 
+        // player 1 - right control
         case 68:
             if (direction != 'left') {
                 direction = 'right';
@@ -384,6 +431,7 @@ function runGame (drawModule, drawModuleB) {
             }
             break;
 
+        // player 1 - up control
         case 87:
             if (direction != 'down') {
                 direction = 'up';
@@ -391,6 +439,7 @@ function runGame (drawModule, drawModuleB) {
             }
             break;
 
+        // player 1 - down control
         case 83:
             if (direction != 'up') {
                 direction = 'down';
@@ -398,6 +447,7 @@ function runGame (drawModule, drawModuleB) {
             }
             break;
 
+        // player 2 - left control
         case 74:
             if (movement != 'right') {
                 movement = 'left';
@@ -405,6 +455,7 @@ function runGame (drawModule, drawModuleB) {
             }
             break;
 
+        // player 2 - right control
         case 76:
             if (movement != 'left') {
                 movement = 'right';
@@ -412,6 +463,7 @@ function runGame (drawModule, drawModuleB) {
             }
             break;
 
+        // player 2 - up control
         case 73:
             if (movement != 'down') {
                 movement = 'up';
@@ -419,6 +471,7 @@ function runGame (drawModule, drawModuleB) {
             }
             break;
 
+        // player 2 - down control
         case 75:
             if (movement != 'up') {
                 movement = 'down';
@@ -429,4 +482,5 @@ function runGame (drawModule, drawModuleB) {
     }
 }
 
+// calling the runGame function
 runGame(drawModule, drawModuleB);
