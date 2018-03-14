@@ -7,20 +7,28 @@
 </head>
 <body>
 	<header>
-		<h1>THE SNAKE GAME</h1>	
+		<h1>ZNAKE</h1>
 	</header>
 
-	<canvas id="myCanvas" width="350" height ="350">
-	</canvas>
+	<div class="allCanvas">
+		<canvas id="myCanvas" width="350" height ="350">
+		</canvas>
 
-	<canvas id="dualCanvas" width="350" height ="350">
-	</canvas>
+		<canvas id="dualCanvas" width="350" height ="350">
+		</canvas>
+	</div>
 
-	<div class="centerer">
-		<button class="button" id="btn">Start</button>
-		<button class="button" id="backBtn">Back</button>
+	<p class="control" id="onePlayerControl"><br><br><br>W - Up<br>S - Down<br>A - Left<br>D - Right</p>
+	
+	<p class="control" id="twoPlayerControl"><u>Player Left</u><br>W - Up<br>S - Down<br>A - Left<br>D - Right<br><br><u>Player Right</u><br>I - Up<br>K - Down<br>J - Left<br>L - Right</p>
+
+	<div class="allButton">
 		<button class="button" id="onePlayer">1 Player</button>
 		<button class="button" id="twoPlayer">2 Players</button>
+		<button class="button" id="btn">Start</button>
+		<button class="button" id="backBtn">Back</button>
+		<button class="button" id="controlBtnP1">Control</button>
+		<button class="button" id="controlBtnP2">Control</button>
 	</div>
 
 	<script src="script.js"></script>

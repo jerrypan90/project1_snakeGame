@@ -5,6 +5,10 @@ var firstPlayerCanvas = document.querySelector('#myCanvas');
 var secondPlayerCanvas = document.querySelector('#dualCanvas');
 var startBtn = document.querySelector('#btn');
 var backBtn = document.querySelector('#backBtn');
+var controlBtnP1 = document.querySelector('#controlBtnP1');
+var controlBtnP2 = document.querySelector('#controlBtnP2');
+var onePlayerControl = document.querySelector('#onePlayerControl');
+var twoPlayerControl = document.querySelector('#twoPlayerControl');
 
 // one player game
 function startOnePlayer() {
@@ -12,7 +16,11 @@ function startOnePlayer() {
     twoPlayerBtn.style.display = "none";
     firstPlayerCanvas.style.display = "inline-block";
     startBtn.style.display = "inline-block";
+    startBtn.style.marginTop = "10px";
     backBtn.style.display = "inline-block";
+    backBtn.style.marginTop = "10px";
+    controlBtnP1.style.display = "inline-block";
+    controlBtnP2.style.display = "none";
 }
 
 // two players game
@@ -22,9 +30,14 @@ function startTwoPlayer() {
     firstPlayerCanvas.style.display = "inline-block";
     secondPlayerCanvas.style.display = "inline-block";
     startBtn.style.display = "inline-block";
+    startBtn.style.marginTop = "10px";
     backBtn.style.display = "inline-block";
+    backBtn.style.marginTop = "10px";
+    controlBtnP1.style.display = "none";
+    controlBtnP2.style.display = "inline-block";
 }
 
+// return back to main menu
 function mainMenu() {
     onePlayerBtn.style.display = "inline-block";
     twoPlayerBtn.style.display = "inline-block";
@@ -32,6 +45,22 @@ function mainMenu() {
     secondPlayerCanvas.style.display = "none";
     startBtn.style.display = "none";
     backBtn.style.display = "none";
+    controlBtnP1.style.display = "none";
+    controlBtnP2.style.display = "none";
+}
+
+// to display & remove instructions to play game
+function appearOnePlayerControl() {
+    onePlayerControl.style.display = "block";
+}
+function removeOnePlayerControl() {
+    onePlayerControl.style.display = "none";
+}
+function appearTwoPlayerControl() {
+    twoPlayerControl.style.display = "block";
+}
+function removeTwoPlayerControl() {
+    twoPlayerControl.style.display = "none";
 }
 
 // linking 1 Player button to startOnePlayer function
@@ -42,6 +71,14 @@ twoPlayerBtn.addEventListener("click", startTwoPlayer);
 
 // linking back button to home page
 backBtn.addEventListener("click", mainMenu);
+
+// button to display control keys for Player 1
+controlBtnP1.addEventListener("mouseover", appearOnePlayerControl);
+controlBtnP1.addEventListener("mouseout", removeOnePlayerControl);
+
+// button to display control keys for Player 2
+controlBtnP2.addEventListener("mouseover", appearTwoPlayerControl);
+controlBtnP2.addEventListener("mouseout", removeTwoPlayerControl);
 
 // linking to P1 myCanvas html
 var mycanvas = document.getElementById('myCanvas');
