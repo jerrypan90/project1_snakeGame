@@ -1,3 +1,7 @@
+span {
+	display: inline-block;
+	padding: 70px;
+}
 canvas {
 	border: 3px solid black;
 	margin: 40px 10px 0px 10px;
@@ -21,20 +25,20 @@ header {
 	width: 80%;
 	margin: 0 auto;
 }
+#survivalCanvas {
+	margin: 0 auto;
+}
 #onePlayerControl {
 	display: none;
 }
 #twoPlayerControl {
 	display: none;
 }
-#onePlayer, #twoPlayer {
+#onePlayer, #twoPlayer, #highScoreMode, #survivalMode {
 	margin-top: 130px;
 }
-#btn {
+#btn, #backBtn, #survivalBtn, #highScoreMode, #survivalMode {
 	display:none;
-}
-#backBtn {
-	display: none;
 }
 #controlBtnP1, #controlBtnP2 {
 	border-radius: 60px;
@@ -52,7 +56,7 @@ header {
 	width: 70%;
 	left: 0;
 	right: 0;
-	top: 100px;
+	top: 165px;
 	margin: 0 auto;
 	height: 400px;
 	border-radius: 40px;
